@@ -1,0 +1,16 @@
+<launch>
+
+<include file="$(find usb_cam)/launch/usb_cam-test.launch"/>
+
+<include file="$(find orb_slam2_ros)/ros/launch/test_rgbd.launch"/>
+
+<node type="display_op_rgbd.py" pkg="orb_slam2_ros" name="display_op_rgbd"/>
+
+<node type="rviz" pkg="rviz" name="rviz" args="-d $(find orb_slam2_ros)/rviz/rviz_rgbd.rviz"/>
+
+<!-- <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="3.5 0 0 0 -0.2164396 0 0.976296 map map_rotated 100" /> -->
+<node pkg="tf" type="static_transform_publisher" name="link1_broadcaster2" args="0 0 0 0.29 -0.436332 0 map map_rotated 100" />
+<node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="-3.39 -1.5 -3.5 0 0 0 map_rotated final_map_rotated 100" />
+
+
+</launch>
