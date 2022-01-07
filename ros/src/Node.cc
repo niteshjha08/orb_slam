@@ -310,7 +310,7 @@ void Node::LoadOrbParameters (ORB_SLAM2::ORBParameters& parameters) {
   node_handle_.param(name_of_node_ + "/ORBextractor/nFeatures", parameters.nFeatures, 1200);
   node_handle_.param(name_of_node_ + "/ORBextractor/scaleFactor", parameters.scaleFactor, static_cast<float>(1.2));
   node_handle_.param(name_of_node_ + "/ORBextractor/nLevels", parameters.nLevels, 8);
-  node_handle_.param(name_of_node_ + "/ORBextractor/iniThFAST", parameters.iniThFAST, 20);
+  node_handle_.param(name_of_node_ + "/ORBextractor/iniThFAST", parameters.iniThFAST, 5); //  default value:20
   node_handle_.param(name_of_node_ + "/ORBextractor/minThFAST", parameters.minThFAST, 7);
 
   bool load_calibration_from_cam = false;
